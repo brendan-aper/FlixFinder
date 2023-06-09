@@ -3,10 +3,14 @@
 * {
     padding: 10px;
     font-family: 'Comfortaa', cursive;
+    color: white;
 }
 
-.search-card {
-    border: 5px solid black;
+.search-card, .saved-card {
+    border: 5px solid maroon;
+    color: white;
+    background-color: maroon;
+    fill-opacity: 40%;
     padding: 10px;
     max-width: fit-content;
     border-radius: 30px;
@@ -14,10 +18,16 @@
 
 button {
     border-radius: 30px;
+    color: white;
+    background-color: maroon;
+    border: 2px solid white ;
 }
 
 input {
     border-radius: 30px;
+    color: white;
+    background-color: maroon;
+    border: 2px solid white ;
 }
 
 #search-inputs {
@@ -25,5 +35,29 @@ input {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    
 }
 
+
+
+body {
+    background-color: black;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.center-align {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+::placeholder {
+    color: white;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
