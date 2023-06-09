@@ -1,3 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
+* {
+    padding: 10px;
+    font-family: 'Comfortaa', cursive;
+}
+
 .search-card {
     border: 5px solid black;
+    padding: 10px;
+    max-width: fit-content;
+    border-radius: 30px;
 }
+
+button {
+    border-radius: 30px;
+}
+
+input {
+    border-radius: 30px;
+}
+
+#search-inputs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
