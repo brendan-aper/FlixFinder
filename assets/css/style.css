@@ -61,3 +61,13 @@ a {
     text-decoration: none;
     color: white;
 }
+
+#enjoy {
+    border: 5px solid maroon;
+    color: white;
+    background-color: maroon;
+    fill-opacity: 40%;
+    padding: 10px;
+    max-width: fit-content;
+    border-radius: 30px;
+}
