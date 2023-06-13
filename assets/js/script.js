@@ -1,15 +1,4 @@
-fetch('https://online-movie-database.p.rapidapi.com/auto-complete?q=a', {
-	"method": 'GET',
-	"headers": {
-		'X-RapidAPI-Key': 'b40b73504dmshc6c0b9e39414d14p104dcejsn2a4e4edabb6f',
-		'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com'
-	}
-})
-.then(response => response.json())
-.then(data => console.log(data))
-.catch(err => {
-    console.error(err);
-})
+
 
 var movieSearchBar = document.getElementById("search-button");
 var searchList = document.getElementById("search-card");
@@ -25,6 +14,18 @@ searchBtn.addEventListener("click", function() {
     // create value to be added to end of query string in movie API 
     var searchKey = searchInput.value;
     console.log(searchKey)
+    fetch('https://online-movie-database.p.rapidapi.com/auto-complete?q=' + searchKey, {
+	"method": 'GET',
+	"headers": {
+		'X-RapidAPI-Key': 'b40b73504dmshc6c0b9e39414d14p104dcejsn2a4e4edabb6f',
+		'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com'
+	}
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(err => {
+    console.error(err);
+})
 })
 
 
@@ -38,7 +39,7 @@ searchBtn.addEventListener("click", function() {
     // rated
             // to print to page 
             var searchCard = document.querySelector("#search-card");
-            searchCard.innerHTML += `<p>${nameOfMovie}</p<`
+            // searchCard.innerHTML += `<p>${nameOfMovie}</p<`
 
 // event listenr to save to local storage
     // local storage is an object array 
