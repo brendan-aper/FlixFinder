@@ -49,3 +49,4 @@ function loadMapScript() {
   // Load the map script when the page is ready
   window.addEventListener('load', loadMapScript);
   
+  // brendan comment
