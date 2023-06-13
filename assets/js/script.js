@@ -14,7 +14,7 @@ searchBtn.addEventListener("click", function() {
     // create value to be added to end of query string in movie API 
     var searchKey = searchInput.value;
     console.log(searchKey)
-    fetch('https://online-movie-database.p.rapidapi.com/auto-complete?q=' + searchKey, {
+    fetch('https://online-movie-database.p.rapidapi.com/auto-complete?q=' + searchKey + `&limit=5`, {
 	"method": 'GET',
 	"headers": {
 		'X-RapidAPI-Key': 'b40b73504dmshc6c0b9e39414d14p104dcejsn2a4e4edabb6f',
@@ -22,12 +22,21 @@ searchBtn.addEventListener("click", function() {
 	}
 })
 .then(response => response.json())
-.then(data => console.log(data))
+.then(showData => {
+    console.log(showData);
+    showName = showData.d[0].l;
+    showYear = showData.d[0].y;
+    console.log(showName, showYear);
+    searchCard.innerHTML += `<div class="search-card"><p>${showName}</p><p>${showYear}</p></div>`;
+
+}
+    )
 .catch(err => {
     console.error(err);
 })
 })
 
+/// silly silly changes
 
 // print results to the page ()
     // movie title
