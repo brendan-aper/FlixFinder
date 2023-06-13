@@ -17,18 +17,28 @@ var searchList = document.getElementById("search-card");
 // search a movie
 
 // API search movies
+// define search button
+var searchBtn = document.querySelector('input[name="search-button"]');
+var searchInput = document.querySelector('input[type="text"]')
+
+searchBtn.addEventListener("click", function() {
+    // create value to be added to end of query string in movie API 
+    var searchKey = searchInput.value;
+    console.log(searchKey)
+})
+
 
 // print results to the page ()
     // movie title
-    // var nameOfMovie;
+    var nameOfMovie;
     // where to stream 
     // year released
     // length 
     // actors (limit=3) maybeeeee
     // rated
             // to print to page 
-            // var searchCard = document.querySelector("#search-card");
-            // searchCard.innerHTML += `<p>${nameOfMovie}</p<`
+            var searchCard = document.querySelector("#search-card");
+            searchCard.innerHTML += `<p>${nameOfMovie}</p<`
 
 // event listenr to save to local storage
     // local storage is an object array 
