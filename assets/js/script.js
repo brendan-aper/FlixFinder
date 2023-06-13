@@ -26,9 +26,11 @@ searchBtn.addEventListener("click", function() {
     console.log(showData);
     showName = showData.d[0].l;
     showYear = showData.d[0].y;
+    showImage = showData.d[0].i.imageUrl;
+    console.log(showImage);
+    searchArea = document.querySelector("#search-area");
     console.log(showName, showYear);
-    searchCard.innerHTML += `<div class="search-card"><p>${showName}</p><p>${showYear}</p></div>`;
-
+    searchArea.innerHTML += `<div class="search-card"><p>${showName}</p><img src="${showImage}" alt="movie-image"><p>${showYear}</p></div>`;
 }
     )
 .catch(err => {
