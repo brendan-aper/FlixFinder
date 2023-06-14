@@ -1,24 +1,11 @@
+var searchBtn = document.querySelector(".search-button");
+var searchInput = document.querySelector('.searchInput');
+var searchArea = document.querySelector("#search-area");
 
-
-var movieSearchBar = document.getElementById("search-button");
-var searchList = document.getElementById("search-card");
-
-
-// search a movie
-
-// API search movies
-// define search button
-var searchBtn = document.querySelector('input[name="search-button"]');
-var searchInput = document.querySelector('input[type="text"]')
-
-searchBtn.addEventListener("click", function() {
-    // create value to be added to end of query string in movie API 
-    var searchKey = searchInput.value;
+function getMovieData() {
     // clear the input search value
-    searchInput.value = "";
-    // give it a new placeholder to tell user to search again
-    searchInput.placeholder = "Search movie title";
-    fetch('https://online-movie-database.p.rapidapi.com/auto-complete?q=' + searchKey, {
+    // searchInput.value = "";
+    fetch('https://online-movie-database.p.rapidapi.com/auto-complete?q=' + searchInput.value, {
     "method": 'GET',
     "headers": {
         'X-RapidAPI-Key': 'b40b73504dmshc6c0b9e39414d14p104dcejsn2a4e4edabb6f',
@@ -33,44 +20,81 @@ searchBtn.addEventListener("click", function() {
         // reload main page
         location.reload
     }
-    // define search area
-    searchArea = document.querySelector("#search-area");
+    
     // clear search area upon search
     searchArea.innerHTML = "";
     console.log(showData);
     for (var m = 0; m < showData.d.length; m++) {
-        showName = showData.d[m].l;
-        showYear = showData.d[m].y;
-        showImage = showData.d[m].i.imageUrl;
-        console.log(showImage);
-        console.log(showName, showYear);
-        searchArea.innerHTML += `<div class="search-card" id="${showName}"><p class="movieName">${showName}</p><p>${showYear}</p><img class="movieImg" src="${showImage}" alt="movie-image"><br><button class="save">Save</button><a href="./map.html"><button>Get Snacks</button></a></div>`};
-    var saveBtn = document.getElementsByClassName("save");
-    for (var i = 0; i < saveBtn.length; i++) {
-        saveBtn[i].addEventListener("click", function() {
-            console.log("clicked");
-            var closestMovieID = this.parentNode.id;
-            // change label of button
-            this.innerHTML = "Saved";
-            console.log(closestMovieID);
-            var storedShows = JSON.parse(localStorage.getItem('savedShows')) || [];
-            var newShowTitle = closestMovieID;
-            if (!storedShows.includes(newShowTitle)) {
-            storedShows.push(newShowTitle)};
-            localStorage.setItem('savedShows', JSON.stringify(storedShows))
-            console.log(localStorage.getItem('savedShows'));
+        var displayCard = document.createElement("div");
+        searchArea.appendChild(displayCard).classList.add("search-card");
 
-        })
-    }}
-    )
-.catch(err => {
-    console.error(err);
-})
+        // creating the title of the movie
+        var movieTitle = document.createElement("p");
+        movieTitle.innerHTML = showData['d'][m]['l'];
+        movieTitle.classList.add("movieName");
+        displayCard.appendChild(movieTitle);
+
+        //creating the year it was released
+        var movieDate = document.createElement("p");
+        movieDate.innerHTML = showData['d'][m]['y'] || showData['d'][m]['yr'] || null;
+        movieDate.classList.add("movieDate");
+        displayCard.appendChild(movieDate);
+
+        //Creating an image of the movie
+        var movieImg = document.createElement('img');
+        movieImg.classList.add("movieImg");
+        if (showData['d'][m]['i'] && showData['d'][m]['i']['imageUrl']) {
+            movieImg.src = showData['d'][m]['i']['imageUrl'];
+        } else {
+            movieImg.src = 'https://images.unsplash.com/photo-1493664543243-589b576c5bcd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dmhzJTIwdGFwZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'; // Provide a fallback image URL or set it to a placeholder image
+        }
+        displayCard.appendChild(movieImg);
+        
+        // creating a save button
+        var saveBtn = document.createElement('button');
+        saveBtn.innerHTML = "Save Movie"
+        saveBtn.classList.add('saveBtn')
+        displayCard.appendChild(saveBtn);
+
+        // creating a get snacks button
+        var getSnacksLink = document.createElement("a");
+        getSnacksLink.href = ".../map.html";
+        var getSnacksBtn = document.createElement("button");
+        getSnacksBtn.textContent = "Get Snacks";
+        getSnacksLink.appendChild(getSnacksBtn);
+        displayCard.appendChild(getSnacksLink);
+
+
+        (function(title, date, image) {
+            saveBtn.addEventListener('click', function() {
+              // Retrieve existing saved data from local storage
+              var existingData = JSON.parse(localStorage.getItem('savedMovie')) || [];
+    
+              var savedData = {
+                title: title.innerHTML,
+                date: date.innerHTML,
+                image: image.src
+              };
+              existingData.push(savedData);
+    
+              //Store the updated data back into local storage
+              localStorage.setItem('savedMovie', JSON.stringify(existingData));
+            });
+          })(movieTitle, movieDate, movieImg);
+        }
+    })
+//     .catch(err => {
+//         console.error(err);
+//         })
+}
+    
+searchBtn.addEventListener('click', function() {
+    getMovieData()
 })
 
 var seeSaved = document.querySelector(".see-saved");
 seeSaved.addEventListener("click", function() {
-    wiindow.location.href = "./assets/saved.html";
+    wiindow.location.href = "./assets/html/saved.html";
     console.log("hi")})
 
 
