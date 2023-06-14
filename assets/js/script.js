@@ -74,6 +74,15 @@ seeSaved.addEventListener("click", function() {
     console.log("hi")})
 
 
+    var link = document.getElementById('saved-link');
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      // create data value of local storage from other HTML file
+      var data = localStorage.getItem('savedShows');
+      // create link 
+      window.location.href = link.href + '?data=' + encodeURIComponent(data);
+      console.log("worked")
+    });
 // event listenr to save to local storage
     // local storage is an object array 
 // display saved data 
