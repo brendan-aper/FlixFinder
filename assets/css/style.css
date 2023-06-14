@@ -6,6 +6,10 @@
     color: white;
 }
 
+p {
+    padding: 0px;
+    margin: 10px;
+}
 .search-card, .saved-card {
     border: 5px solid maroon;
     color: white;
@@ -15,6 +19,8 @@
     max-width: fit-content;
     border-radius: 30px;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 button {
@@ -22,6 +28,7 @@ button {
     color: white;
     background-color: maroon;
     border: 2px solid white ;
+    width: fit-content;
 }
 
 input {
@@ -82,6 +89,5 @@ a {
 }
 
 .movieImg {
-    height: 100px;
-    width: 100px;
+    width: 200px;
 }
