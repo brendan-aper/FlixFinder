@@ -30,5 +30,18 @@ if (savedData) {
     movieDiv.appendChild(movieImgElement);
 
     savedMoviesDiv.appendChild(movieDiv);
+
+    var removeBtn = document.createElement('button');
+    removeBtn.textContent = "Remove"
+    movieDiv.appendChild(removeBtn);
+
+    removeBtn.addEventListener('click', function() {
+      // Remove the corresponding movie data from local storage
+      savedData.splice(i, 1);
+      localStorage.setItem('savedMovie', JSON.stringify(savedData));
+      
+      // Remove the displayed movie div from the page
+      this.parentNode.remove();
+    });
   }
 }
