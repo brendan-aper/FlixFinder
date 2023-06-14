@@ -12,16 +12,21 @@
     background-color: maroon;
     fill-opacity: 40%;
     padding: 10px;
-    max-width: fit-content;
+    max-width: 600px;
     border-radius: 30px;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 button {
+    width: 300px;
     border-radius: 30px;
     color: white;
     background-color: maroon;
-    border: 2px solid white ;
+    border: 2px solid white;
 }
 
 input {
@@ -61,8 +66,14 @@ body {
 a {
     text-decoration: none;
     color: white;
+    margin-top: 10px;
+    padding: 0px;
 }
 
+p {
+    padding-top: 10px;
+    margin-top: 10px;
+}
 #enjoy {
     border: 5px solid maroon;
     color: white;
@@ -82,6 +93,5 @@ a {
 }
 
 .movieImg {
-    height: 100px;
-    width: 100px;
+    max-width: 200px;
 }

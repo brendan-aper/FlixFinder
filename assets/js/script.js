@@ -67,7 +67,11 @@ function getMovieData() {
 
         (function(title, date, image) {
             saveBtn.addEventListener('click', function() {
+                saveBtn.textContent - "";
+                saveBtn.textContent = "Saved";
+                console.log(saveBtn.textContent)
               // Retrieve existing saved data from local storage
+
               var existingData = JSON.parse(localStorage.getItem('savedMovie')) || [];
     
               var savedData = {
@@ -75,9 +79,13 @@ function getMovieData() {
                 date: date.innerHTML,
                 image: image.src
               };
-              existingData.push(savedData);
+              if (!existingData.incldues(savedData)) {
+                existingData.push(savedData)
+              }
+              ;
     
               //Store the updated data back into local storage
+        
               localStorage.setItem('savedMovie', JSON.stringify(existingData));
             });
           })(movieTitle, movieDate, movieImg);
