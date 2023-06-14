@@ -58,7 +58,7 @@ function getMovieData() {
 
         // creating a get snacks button
         var getSnacksLink = document.createElement("a");
-        getSnacksLink.href = ".../map.html";
+        getSnacksLink.href = "./assets/html/map.html";
         var getSnacksBtn = document.createElement("button");
         getSnacksBtn.textContent = "Get Snacks";
         getSnacksLink.appendChild(getSnacksBtn);
@@ -113,3 +113,4 @@ seeSaved.addEventListener("click", function() {
 // dynamic styling for start watching button
     // show enjoy section
     // hide search section 
+    
