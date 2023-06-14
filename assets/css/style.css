@@ -80,3 +80,8 @@ a {
     display: flex;
     margin-bottom: 10px;
 }
+
+.movieImg {
+    height: 50%;
+    width: 50%;
+}
