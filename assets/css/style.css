@@ -29,12 +29,30 @@ button {
     border: 2px solid white;
 }
 
+button:hover {opacity: .7;}
+
+button:active {
+    opacity: .5;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.search-button:hover {opacity: .7;}
+
+.search-button:active {
+    opacity: .5;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
 input {
     border-radius: 30px;
     color: white;
     background-color: maroon;
     border: 2px solid white ;
 }
+
+
 
 #search-inputs {
     display: flex;
