@@ -28,6 +28,35 @@ function getMovieData() {
         var displayCard = document.createElement("div");
         searchArea.appendChild(displayCard).classList.add("search-card");
 
+        var movieId = showData['d'][m]["id"]
+        console.log(movieId)
+        fetch('https://api.themoviedb.org/3/movie/'+ movieId +'/watch/providers?api_key=03a6264fac3ce45399458b21ecf50a52', {
+        "method": 'GET',
+        "headers": {
+          "accept": 'application/json',
+        }
+      })
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error("Error: ${response.status}");
+        }
+        })
+        .then(data => {
+            console.log(data.results);
+            // console.log(data.results.AD.flatrate[0].provider_name);
+            // console.log(data.results.CA.flatrate[0].provider_name);
+            // console.log(data.results.CZ.flatrate[0].provider_name);
+            for (let p in data.results) {
+            var provider = data.results[p].flatrate[0].provider_name;
+            console.log(provider);
+            
+            }
+        })
+    
+        
+
         // creating the title of the movie
         var movieTitle = document.createElement("p");
         movieTitle.innerHTML = showData['d'][m]['l'];
@@ -97,8 +126,22 @@ searchBtn.addEventListener('click', function() {
     getMovieData()
 })
 
-
-
+//   fetch('https://api.themoviedb.org/3/movie/movie_id/watch/providers?api_key=03a6264fac3ce45399458b21ecf50a52', {
+//         "method": 'GET',
+//         "headers": {
+//           "accept": 'application/json',
+//         }
+//       })
+//     .then(response => {
+//         if (response.ok) {
+//             return response.json();
+//         } else {
+//             throw new Error("Error: ${response.status}");
+//         }
+//         })
+//         .then(data => {
+//             console.log(data);
+//         })
 
 // event listenr to save to local storage
     // local storage is an object array 
