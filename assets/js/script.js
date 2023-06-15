@@ -52,13 +52,13 @@ function getMovieData() {
         
         // creating a save button
         var saveBtn = document.createElement('button');
-        saveBtn.innerHTML = "Save Movie"
+        saveBtn.textContent = "Save Movie"
         saveBtn.classList.add('saveBtn')
         displayCard.appendChild(saveBtn);
 
         // creating a get snacks button
         var getSnacksLink = document.createElement("a");
-        getSnacksLink.href = ".../map.html";
+        getSnacksLink.href = "./assets/html/map.html";
         var getSnacksBtn = document.createElement("button");
         getSnacksBtn.textContent = "Get Snacks";
         getSnacksLink.appendChild(getSnacksBtn);
@@ -79,23 +79,25 @@ function getMovieData() {
     
               //Store the updated data back into local storage
               localStorage.setItem('savedMovie', JSON.stringify(existingData));
+
+              //change text of save button
+              this.textContent = "Movie Saved"
             });
           })(movieTitle, movieDate, movieImg);
         }
+
+        
     })
-//     .catch(err => {
-//         console.error(err);
-//         })
+    .catch(err => {
+        console.error(err);
+        })
 }
     
 searchBtn.addEventListener('click', function() {
     getMovieData()
 })
 
-var seeSaved = document.querySelector(".see-saved");
-seeSaved.addEventListener("click", function() {
-    wiindow.location.href = "./assets/html/saved.html";
-    console.log("hi")})
+
 
 
 // event listenr to save to local storage
@@ -113,3 +115,4 @@ seeSaved.addEventListener("click", function() {
 // dynamic styling for start watching button
     // show enjoy section
     // hide search section 
+    
