@@ -79,7 +79,13 @@ function getMovieData() {
             movieImg.src = 'https://images.unsplash.com/photo-1493664543243-589b576c5bcd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dmhzJTIwdGFwZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'; // Provide a fallback image URL or set it to a placeholder image
         }
         displayCard.appendChild(movieImg);
-        
+        // create providers
+        var provider = document.createElement('p');
+        if (provider === "Netflix") {
+        provider.textContent = "Netflix"} else if (provider === "Disney Plus") {provider.textContent === "Disney Plus"} else {provider.textContent = "sucker, you don't get to watch"}
+        displayCard.append(provider);
+
+
         // creating a save button
         var saveBtn = document.createElement('button');
         saveBtn.textContent = "Save Movie"
