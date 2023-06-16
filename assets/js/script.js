@@ -30,7 +30,7 @@ function getMovieData() {
 
         var movieId = showData['d'][m]["id"]
         console.log(movieId)
-        fetch('https://api.themoviedb.org/3/movie/'+ movieId +'/watch/providers?api_key=03a6264fac3ce45399458b21ecf50a52', {
+        fetch('https://api.themoviedb.org/3/movie/'+ movieId +'/watch/providers?api_key=708af97118msh3f74fb80ad20ee2p1f232ejsncd6d167e1b72', {
         "method": 'GET',
         "headers": {
           "accept": 'application/json',
