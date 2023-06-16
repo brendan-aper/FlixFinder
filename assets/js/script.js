@@ -20,7 +20,6 @@ async function getMovieData() {
     }
 
     searchArea.innerHTML = "";
-    console.log(showData);
 
     for (var m = 0; m < 1; m++) {
       var uniqueProviders = [];
@@ -28,8 +27,6 @@ async function getMovieData() {
       searchArea.appendChild(displayCard).classList.add("search-card");
 
       var movieId = showData['d'][m]["id"];
-      console.log(movieId);
-
       const providersResponse = await fetch('https://api.themoviedb.org/3/movie/' + movieId + '/watch/providers?api_key=03a6264fac3ce45399458b21ecf50a52', {
         "method": 'GET',
         "headers": {
@@ -48,9 +45,7 @@ async function getMovieData() {
               uniqueProviders.push(providerName);
               localStorage.setItem("providers", JSON.stringify(uniqueProviders));
             }
-          } else {
-            console.log('No provider found for result ' + p);
-          }
+          } 
         }
       } else {
         throw new Error("Error: " + providersResponse.status);
@@ -81,7 +76,7 @@ async function getMovieData() {
 
       console.log(localStorage.getItem("providers"));
       var provider = document.createElement('p');
-      provider.innerHTML = JSON.parse(localStorage.getItem("providers"));
+      provider.innerHTML = JSON.parse(localStorage.getItem("providers")).join(', ');
       displayCard.append(provider);
 
       var saveBtn = document.createElement('button');
@@ -89,19 +84,20 @@ async function getMovieData() {
       saveBtn.classList.add('saveBtn')
       displayCard.appendChild(saveBtn);
 
-      (function(title, date, image) {
+      (function(title, date, image, provider) {
         saveBtn.addEventListener('click', function() {
           var existingData = JSON.parse(localStorage.getItem('savedMovie')) || [];
           var savedData = {
             title: title.innerHTML,
             date: date.innerHTML,
-            image: image.src
+            image: image.src,
+            provider: provider.textContent
           };
           existingData.push(savedData);
           localStorage.setItem('savedMovie', JSON.stringify(existingData));
           this.textContent = "Movie Saved"
         });
-      })(movieTitle, movieDate, movieImg);
+      })(movieTitle, movieDate, movieImg, providerEl);
     }
   } catch (error) {
     console.error(error);

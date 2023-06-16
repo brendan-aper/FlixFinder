@@ -9,6 +9,7 @@ if (savedData) {
     var movieTitle = movieData.title;
     var movieDate = movieData.date
     var movieImgSrc = movieData.image;
+    var movieProviders = movieData.provider;
 
      // Create a new div to display the saved movie data
      var movieDiv = document.createElement('div');
@@ -29,6 +30,11 @@ if (savedData) {
     movieImgElement.classList.add("movieImg");
     movieDiv.appendChild(movieImgElement);
 
+    var movieSavedProvider = document.createElement('p');
+    movieSavedProvider.textContent = movieProviders;
+    movieSavedProvider.classList.add("providers");
+    movieDiv.appendChild(movieSavedProvider);
+    
     savedMoviesDiv.appendChild(movieDiv);
 
     var removeBtn = document.createElement('button');
