@@ -12,9 +12,19 @@
     background-color: maroon;
     fill-opacity: 40%;
     padding: 10px;
-    max-width: fit-content;
+    min-width: 250px;
     border-radius: 30px;
     margin-bottom: 10px;
+}
+
+.saved-card {
+    margin-top: 10px;
+    max-width: 253px
+}
+.movieName, .movieDate, .movieImg {
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 button {
@@ -45,6 +55,7 @@ input {
     color: white;
     background-color: maroon;
     border: 2px solid white ;
+    margin-right: 10px;
 }
 
 
@@ -57,7 +68,13 @@ input {
     
 }
 
+.see-saved, .getSnacks-btn {
+    min-width: 250px;
 
+}
+.getSnacks-btn {
+
+}
 
 body {
     background-color: black;    
@@ -80,6 +97,10 @@ a {
     text-decoration: none;
     color: white;
 }
+ p {
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
 
 #enjoy {
     border: 5px solid maroon;
@@ -87,7 +108,7 @@ a {
     background-color: maroon;
     fill-opacity: 40%;
     padding: 10px;
-    max-width: fit-content;
+    min-width: 229px;
     border-radius: 30px;
 }
 
@@ -100,6 +121,14 @@ a {
 }
 
 .movieImg {
-    height: 50%;
-    width: 50%;
+    max-width: 200px;
+    padding-left: 25px;
+    padding-bottom: 16px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
