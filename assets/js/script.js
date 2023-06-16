@@ -45,14 +45,15 @@ function getMovieData() {
         })
         .then(data => {
             console.log(data.results);
-            // console.log(data.results.AD.flatrate[0].provider_name);
-            // console.log(data.results.CA.flatrate[0].provider_name);
-            // console.log(data.results.CZ.flatrate[0].provider_name);
             for (let p in data.results) {
-            var provider = data.results[p].flatrate[0].provider_name;
-            console.log(provider);
-            
-            }
+                if (data.results[p].flatrate && data.results[p].flatrate.length > 0) {
+                  var provider = data.results[p].flatrate[0].provider_name;
+                  console.log(provider);
+                } else {
+                  console.log('No provider found for result ' + p);
+                }
+              }
+              
         })
     
         
@@ -84,14 +85,6 @@ function getMovieData() {
         saveBtn.textContent = "Save Movie"
         saveBtn.classList.add('saveBtn')
         displayCard.appendChild(saveBtn);
-
-        // creating a get snacks button
-        // var getSnacksLink = document.createElement("a");
-        // getSnacksLink.href = "./assets/html/map.html";
-        // var getSnacksBtn = document.createElement("button");
-        // getSnacksBtn.textContent = "Get Snacks";
-        // getSnacksLink.appendChild(getSnacksBtn);
-        // displayCard.appendChild(getSnacksLink);
 
 
         (function(title, date, image) {
