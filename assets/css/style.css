@@ -127,7 +127,7 @@ a {
     padding-bottom: 16px;
 }
 
-footer {
+.savedBtn {
     display: flex;
     flex-direction: column;
     justify-content: center;
