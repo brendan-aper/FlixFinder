@@ -8,7 +8,7 @@ function getMovieData() {
     fetch('https://online-movie-database.p.rapidapi.com/auto-complete?q=' + searchInput.value, {
     "method": 'GET',
     "headers": {
-        'X-RapidAPI-Key': 'b40b73504dmshc6c0b9e39414d14p104dcejsn2a4e4edabb6f',
+        'X-RapidAPI-Key': 'c44e174cb6msh5932ef75ee7e78cp117f1fjsna8e356fe8736',
         'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com'
     }
 })
