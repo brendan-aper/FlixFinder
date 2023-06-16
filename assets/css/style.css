@@ -13,6 +13,7 @@
     fill-opacity: 40%;
     padding: 10px;
     min-width: 250px;
+    max-width: 250px;
     border-radius: 30px;
     margin-bottom: 10px;
 }

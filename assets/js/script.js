@@ -86,12 +86,12 @@ function getMovieData() {
         displayCard.appendChild(saveBtn);
 
         // creating a get snacks button
-        var getSnacksLink = document.createElement("a");
-        getSnacksLink.href = "./assets/html/map.html";
-        var getSnacksBtn = document.createElement("button");
-        getSnacksBtn.textContent = "Get Snacks";
-        getSnacksLink.appendChild(getSnacksBtn);
-        displayCard.appendChild(getSnacksLink);
+        // var getSnacksLink = document.createElement("a");
+        // getSnacksLink.href = "./assets/html/map.html";
+        // var getSnacksBtn = document.createElement("button");
+        // getSnacksBtn.textContent = "Get Snacks";
+        // getSnacksLink.appendChild(getSnacksBtn);
+        // displayCard.appendChild(getSnacksLink);
 
 
         (function(title, date, image) {
@@ -126,36 +126,5 @@ searchBtn.addEventListener('click', function() {
     getMovieData()
 })
 
-//   fetch('https://api.themoviedb.org/3/movie/movie_id/watch/providers?api_key=03a6264fac3ce45399458b21ecf50a52', {
-//         "method": 'GET',
-//         "headers": {
-//           "accept": 'application/json',
-//         }
-//       })
-//     .then(response => {
-//         if (response.ok) {
-//             return response.json();
-//         } else {
-//             throw new Error("Error: ${response.status}");
-//         }
-//         })
-//         .then(data => {
-//             console.log(data);
-//         })
 
-// event listenr to save to local storage
-    // local storage is an object array 
-// display saved data 
-    // call local storage object and print in cards
-
-// maps submit button calls API function 
-
-// API fucntion for maps (limit = 5)
-    // name 
-    // distance from current location
-    // operating hours
-
-// dynamic styling for start watching button
-    // show enjoy section
-    // hide search section 
     
