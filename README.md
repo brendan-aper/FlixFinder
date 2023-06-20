@@ -29,9 +29,9 @@
 
 ## Usage
 
-  To use the application, simply open the this [Link](https://brendan-aper.github.io/week-07-group-project-01/) in a web browser. Enter a movie.
+  To use the application, simply open the this [Link](https://brendan-aper.github.io/FlixFinder/) in a web browser. Enter a movie.
 
-  You can also view the source code on our Github [Here](https://github.com/brendan-aper/week-07-group-project-01)
+  You can also view the source code on our Github [Here](https://github.com/brendan-aper/FlixFinder)
 
   ![ScreenShot Placeholder](./assets/images/screenshotplaceholder)
   <!-- placeholder text: waiting to finish all styling before taking screenshot -->
