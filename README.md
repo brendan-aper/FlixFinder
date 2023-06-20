@@ -33,8 +33,15 @@
 
   You can also view the source code on our Github [Here](https://github.com/brendan-aper/FlixFinder)
 
-  ![ScreenShot Placeholder](./assets/images/screenshotplaceholder)
-  <!-- placeholder text: waiting to finish all styling before taking screenshot -->
+## Screenshots from Deployed Application
+    Landing Page:
+      ![Landing Page](./assets/images/landingPage.png)
+    Search Page:
+      ![Search Page](./assets/images/searchPage.png)
+    Saved Movies Page:
+      ![Saved Page](./assets/images/savedPage.png)
+    Error Alert:
+      ![Error Alert](./assets/images/errorPage.png)
 
 ## Credits
 
