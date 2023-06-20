@@ -10,15 +10,18 @@
 <body>
   <section class="center-align">
     <div id="search-inputs">
-    <input type="text" placeholder="Search movie title" class="searchInput">
-    <input type="submit" name="search-button" class="search-button">
+    <input type="text" placeholder="Enter movie title" class="searchInput">
+    <input type="submit" name="search-button" value="Search" class="search-button">
     </div>
-    <!-- <button class="chatGBT">test</button> -->
     <div class="savedBtn">
       <a href="./assets/html/saved.html"><button class="see-saved">Saved Movies</button></a>     
     </div>
   <section id="search-area">
   </section>
+  <div id="error-notification" class="hidden">
+    <span id="error-message"></span>
+    <button id="reload-button">Search again</button>
+  </div>
 <script src="./assets/js/script.js"></script>
 
 </body>

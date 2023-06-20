@@ -100,7 +100,20 @@ async function getMovieData() {
       })(movieTitle, movieDate, movieImg, providerEl);
     }
   } catch (error) {
-    console.error(error);
+    var errorNotification = document.getElementById('error-notification');
+    var errorMessage = document.getElementById('error-message');
+  
+    errorMessage.textContent = "Could not find title";
+    errorNotification.classList.remove('hidden');
+    searchArea.classList.add('hidden');
+
+    var reloadButton = document.getElementById('reload-button');
+    reloadButton.addEventListener('click', function () {
+      errorNotification.classList.add('hidden');
+      searchArea.classList.remove('hidden');
+
+      location.reload();
+    });
   }
 }
 
