@@ -1,4 +1,4 @@
-# Movie Streaming Search Application
+# FlixFinder
 
   This is a movie streaming search application that allows users to search for movies and find out where they can stream them. The application is built using HTML, CSS, and JavaScript. It utilizes various APIs to fetch movie data and streaming provider information.
 
