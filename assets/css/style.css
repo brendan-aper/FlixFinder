@@ -143,3 +143,36 @@ img {
     border-radius: 10px;
 }
 
+.hidden {
+    display: none;
+  }
+  
+  #error-notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    background-color: #ffdddd;
+    border: 1px solid maroon;
+    border-radius: 30px;
+    text-align: center;
+  }
+  
+  #error-message {
+    display: block;
+    margin-bottom: 10px;
+    color: maroon;
+    font-weight: bold;
+  }
+  
+  #reload-button {
+    background-color: maroon;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  
+
